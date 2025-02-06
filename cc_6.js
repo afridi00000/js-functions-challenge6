@@ -76,3 +76,14 @@ function convertCurrency(amount, exchangeRate) {
 
 convertCurrency(100, 1.1); 
 convertCurrency(250, 0.85); 
+// Task 6: Higher-Order Functions
+function applyBulkDiscount(orders, discountFunction) {
+    const discountedOrders = orders.map(discountFunction);
+    console.log(discountedOrders);
+    return discountedOrders;
+}
+
+
+let orders = [200, 600, 1200, 450, 800];
+applyBulkDiscount(orders, amount => amount > 500 ? amount * 0.9 : amount);
+// Expected output: [200, 540, 1080, 450, 720]
